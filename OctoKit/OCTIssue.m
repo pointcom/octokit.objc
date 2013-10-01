@@ -40,6 +40,7 @@
 		@"HTMLURL": @"html_url",
 		@"objectID": @"number",
 		@"pullRequestHTMLURL": @"pull_request.html_url",
+		@"assignee": @"assignee"
 	}];
 }
 
@@ -49,6 +50,10 @@
 
 + (NSValueTransformer *)pullRequestHTMLURLJSONTransformer {
 	return [NSValueTransformer valueTransformerForName:MTLURLValueTransformerName];
+}
+
++ (NSValueTransformer *)assigneeJSONTransformer {
+	return [NSValueTransformer mtl_JSONDictionaryTransformerWithModelClass:OCTUser.class];
 }
 
 @end

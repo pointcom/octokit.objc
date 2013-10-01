@@ -7,6 +7,7 @@
 //
 
 #import "OCTObject.h"
+#import "OCTUser.h"
 
 @class OCTPullRequest;
 
@@ -18,6 +19,8 @@
 
 // The title of this issue.
 @property (nonatomic, copy, readonly) NSString *title;
+
+@property (nonatomic, copy, readonly) OCTUser *assignee;
 
 // The pull request that is attached to (i.e., the same as) this issue, or nil
 // if this issue does not have code attached.
